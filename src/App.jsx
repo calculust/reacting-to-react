@@ -46,7 +46,7 @@ const App = () => {
 }
 
 const Wrapper = styled.div`
-    color:inherit;
+    color:inherit; // just getting use to adding styled components
 `;
 
 export default App;
