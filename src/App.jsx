@@ -23,7 +23,7 @@ const App = () => {
     if (!loaded) return (
         <Wrapper className="min-vh-100 container position-relative">
             <div className="position-absolute top-50 start-50 translate-middle text-center">
-                <h1 className="mb-5">Website Loading...</h1>
+                <h1 className="mb-3">Website Loading...</h1>
                 <button className="btn btn-primary" onClick={() => setLoaded(true)}>Load Website</button>
             </div>
         </Wrapper>
