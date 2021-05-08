@@ -10,14 +10,14 @@ const App = () => {
 
     const handleUsernameChange = e => {
         setUsername(e.target.value);
-        if (e.target.value != '' && loginDisplay.display == 'none') setLoginDisplay({display:'block'});
-        else if (e.target.value == '') setLoginDisplay({display:'none'});
+        if (e.target.value !== '' && loginDisplay.display === 'none') setLoginDisplay({display:'block'});
+        else if (e.target.value === '') setLoginDisplay({display:'none'});
     }
 
     useEffect(() => {
         setTimeout(() => {
             setLoaded(true);
-        }, 33000);
+        }, 3000);
     }, [loaded]);
 
     if (!loaded) return (
@@ -36,10 +36,11 @@ const App = () => {
             <Greeter phrase="What up" name="Andrew" />
             <div className="form-floating mb-3">
                 <input type="email" value={username} className="form-control" id="floatingInput" onChange={handleUsernameChange} />
-                <label for="floatingInput">Username</label>
+                <label htmlFor="floatingInput">Username</label>
             </div>
-            
-            <p style={loginDisplay}>You are logged in as: {username}</p>
+            <div className="alert alert-warning" role="alert" style={loginDisplay}>
+                You are logged in as: {username}
+            </div>
         </Wrapper>
     );
 }
